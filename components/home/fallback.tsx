@@ -59,3 +59,31 @@ export const TrendingCoinsFallback = () => (
     </div>
   </div>
 );
+
+export const CategoriesFallback = () => (
+  <div className="bg-[#1a2026] rounded-lg py-4">
+    <Skeleton className="h-6 w-32 mx-4 mb-4" />
+    <div className="bg-[#1e2833] py-4 my-2">
+      <ul className="grid grid-cols-5 px-4 text-[#9ba6cc] font-semibold">
+        <li>Category</li>
+        <li>Top Gainers</li>
+        <li>24h Change</li>
+        <li>Market Cap</li>
+        <li>24h Volume</li>
+      </ul>
+    </div>
+    {Array.from({ length: 5 }, (_, i) => (
+      <div key={i} className="grid grid-cols-5 px-4 py-2 border-b border-b-gray-800">
+        <Skeleton className="h-4 w-20" />
+        <div className="flex gap-1">
+          <Skeleton className="w-5 h-5 rounded-full" />
+          <Skeleton className="w-5 h-5 rounded-full" />
+          <Skeleton className="w-5 h-5 rounded-full" />
+        </div>
+        <Skeleton className="h-4 w-16" />
+        <Skeleton className="h-4 w-24" />
+        <Skeleton className="h-4 w-20" />
+      </div>
+    ))}
+  </div>
+);
